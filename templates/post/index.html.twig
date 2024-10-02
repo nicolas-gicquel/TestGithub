@@ -1,0 +1,90 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Page d'accueil
+{% endblock %}
+
+{% block body %}
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-3"></div>
+			<div class="col-md-6">
+				<div class="corp1">
+					<h2 class="titledusite">Les Ateliers d'Andrée</h2>
+					<p id="para1">
+						Après une longue carrière dans l'univers de la tissuterie, où j'ai dirigé divers ateliers de couture, broderie, flocage, etc., ma passion pour la création et tout ce qui touche à la couture et à la sublimation s'est affirmée comme une évidence. Sur ce site, je vous invite à explorer cette passion à travers mes réalisations uniques et entièrement personnalisables. Que ce soit pour le choix des tissus, des matériaux, des couleurs ou des motifs, la seule limite est votre imagination ! N'attendez plus pour me contacter et donner vie à vos idées les plus créatifs.
+					</p>
+				</div>
+			</div>
+			<div class="col-md-3"></div>
+		</div>
+	</div>
+
+	{% include 'pages/carousel.html.twig' %}
+
+	<div class="container">
+		<div>
+			<h2 class="titlequest">Vous avez des questions ?</h2>
+			<p class="question">
+				Pour toute question ou projet, je suis à votre entière disposition. N'hésitez pas à me contacter ; je me ferai un plaisir de répondre à vos demandes et de concrétiser vos rêves les plus ambitieux. Ensemble, donnons vie à vos aspirations les plus audacieuses.
+			</p>
+		</div>
+	</div>
+
+	<div class="container zcom mt-5">
+		<div
+			class="row">
+			<!-- Section 1: Section contact par chat Facebook ou Instagram -->
+			<div class="col-md-4 contacte">
+				<img src="divers/images/chat.png" alt="chat" class="img-fluid logos2 mb-3"/>
+				<p id="titresection">Par chat.<p>
+				<p class>
+					Rendez-vous sur notre page FB et Instagram (lien en bas de page) ou via le formulaire de contact.
+				</p>
+			</div>
+
+			<!-- Section 2: Section contact par téléphone -->
+			<div class="col-md-4 contacte">
+				<img src="divers/images/Icone_telephone.png" alt="Téléphone" class="img-fluid logos1 mb-2"/>
+				<p id="titresection">Par téléphone.</p>
+				<p id="infos">06.07.08.09.10</p>
+			</div>
+
+			<!-- Section 3: contact par courriel -->
+			<div class="col-md-4 contacte">
+				<img src="divers/images/mail.png" alt="mail" class="img-fluid logos1"/>
+				<p id="titresection">Par courriel.</p>
+				<p id="infos">lesateliersdandree@gmail.com</p>
+			</div>
+		</div>
+
+		<!-- Section 4: Carte Google Maps -->
+		<div class="row cadre">
+			<div class="col-12 text-center mb-4">
+				<h3>Me trouver</h3>
+			</div>
+			<div class="col-md-6 mb-3">
+				<div class="map-container">
+					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2755.2256831798604!2d-0.4805039230578569!3d46.32521347110116!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48072fd30c7febeb%3A0xd83f8a6692f6323e!2s3%20Chem.%20des%20Coteaux%20de%20Ribray%2C%2079000%20Niort!5e0!3m2!1sfr!2sfr!4v1724830031167!5m2!1sfr!2sfr" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+				</div>
+			</div>
+			<div class="col-md-6 d-flex flex-column align-items-center justify-content-center">
+				<a class="ucta"  href="{{ path('app_contact') }}"> <!-- Il faudra mettre "app_contact quand on  aura crée le formulaire de contact"-->
+					<div >
+						<span class="ucta-se">Contacter-moi</span>						
+					</div>
+					<div class="ucta-icon">
+						<svg width="13px" height="10px" viewbox="0 0 13 10">
+							<path d="M1,5 L11,5"></path>
+							<polyline points="8 1 12 5 8 9"></polyline>
+						</svg>
+					</div>
+				</a>
+				<p class="adresse">
+					Les Ateliers d’Andrée<br>
+					3 Chemin des Coteaux de Ribray<br>
+					79000 NIORT
+				</p>
+			</div>
+		</div>
+	</div>
+{% endblock %}

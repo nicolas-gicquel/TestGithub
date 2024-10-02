@@ -1,0 +1,40 @@
+@import url('https://fonts.cdnfonts.com/css/diphylleia');
+@import url("https://fonts.cdnfonts.com/css/poppins");
+
+                
+                
+
+
+h3{
+  font-family: 'Diphylleia', sans-serif;
+  font-size: 30px;
+  letter-spacing: 1px;
+  font-weight: bold;
+ 
+}
+
+/*Partie bouton redirection vers formulaire de connexion*/
+ 
+
+.pasdecompte{
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  font-family: 'Poppins', sans-serif;
+}
+  
+.inscription{
+  font-weight: bold;
+  padding-left: 5px;
+}
+.inscription:hover{
+  color: green;
+}
+
+/*espacement*/
+
+
+.conexcont{
+  margin-top: 315px;
+  margin-bottom: 550px;
+}

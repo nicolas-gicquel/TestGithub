@@ -1,0 +1,135 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	Détails du Post
+{% endblock %}
+
+{% block body %}
+
+	<div class="container-fluid mt-3">
+		<div class="container">
+			<!-- Rubrik au-dessus du contenu -->
+			<div class="row">
+				<div class="col-md-12 mb-3 wtitle">
+					{{ post.rubrik }}
+				</div>
+			</div>
+
+			<div class="row center-content">
+				<!-- Colonne pour le contenu existant -->
+				<div class="col-md-6">
+					<div class="row">
+						<div class="col-md-12 mb-3 text-center">
+							{% if post.image1 is not empty %}
+								<img class="img-fluid" src="{{ asset('divers/images/' ~ post.image1) }}" alt="Image du post"/>
+							{% endif %}
+						</div>
+						<div class="col-md-12 mb-3 text-justify wtexte">
+							{{ post.content|raw }}
+						</div>
+						<div class="col-md-12 mb-3 wcreat">
+							{{ post.createdAt|date('D d M Y') }}
+						</div>
+						<div class="col-md-12 mb-5 d-flex align-items-center wavat">
+							<img class="roundedImage" src="{{ asset('divers/avatars/' ~ post.user.avatar) }}" alt="avatar" style="width:20px;">
+							&ensp;
+							{{ post.user.firstname|capitalize }}
+							{{ post.user.lastname|upper }}
+							&ensp;
+						</div>
+					</div>
+				</div>
+				
+				<!-- Nouvelle colonne pour l'image2 et content2 -->
+				<div class="col-md-6">
+					<div class="row">
+						<div class="col-md-12 mb-3 text-center">
+							{% if post.image2 is not empty %}
+								<img class="img-fluid" src="{{ asset('divers/images/' ~ post.image2) }}" alt="Deuxième image du post"/>
+							{% endif %}
+						</div>
+						<div class="col-md-12 mb-3 text-justify wtexte">
+							{{ post.content2|raw }}
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Remonter le bloc des commentaires -->
+			<div class="row wtexte mt-4">
+				<p>{{ post.comments|length }} Commentaire(s)</p>
+			</div>
+
+			<!-- Formulaire de commentaire -->
+			<div class="row mb-3 wrapper">
+				{% if app.user %}
+					<button id="toggle-comment-form" class="cta">
+						<span>Ajouter un commentaire</span>
+						<div class="cta-icon">
+							<svg width="13px" height="10px" viewbox="0 0 13 10">
+								<path d="M1,5 L11,5"></path>
+								<polyline points="8 1 12 5 8 9"></polyline>
+							</svg>
+						</div>
+					</button>
+					<div id="comment-form-container" style="display: none;">
+						{{ form_start(comment_form) }}
+						{{ form_widget(comment_form.content) }}
+						{{ form_errors(comment_form.content) }}
+						{{ form_widget(comment_form.save) }}
+						{{ form_end(comment_form) }}
+					</div>
+				{% else %}
+					<p class="commente">
+						<a class="lien" href="{{ path('app_login') }}">Connectez-vous</a>
+						pour laisser un commentaire.
+					</p>
+				{% endif %}
+			</div>
+
+			<!-- Affichage des commentaires -->
+			<div class="row">
+				<button id="toggle-comments" class="cta">
+					<span>Lire les commentaire(s)</span>
+					<div class="cta-icon">
+						<svg width="13px" height="10px" viewbox="0 0 13 10">
+							<path d="M1,5 L11,5"></path>
+							<polyline points="8 1 12 5 8 9"></polyline>
+						</svg>
+					</div>
+				</button>
+			</div>
+
+			<div id="comments-container" style="display: none;">
+				{% for comment in comments %}
+					<div class="comment mb-3">
+						<div class="row">
+							<div class="col-md-1">
+								<img class="img-fluid roundedImage" src="{{ asset('divers/avatars/' ~ comment.user.avatar) }}" alt="avatar"/>
+							</div>
+							<div class="col-md-8 pt-2 userName">{{ comment.user.pseudo|capitalize }}</div>
+							<div class="col-md-2 text-end">{{ comment.createdAt|date('H:i') }}</div>
+						</div>
+						<div class="col-md-12" style="padding-left:75px;font-size:1.3em;">
+							{{ comment.content|raw }}
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+</div>
+
+<script>
+	document.getElementById('toggle-comment-form').addEventListener('click', function () {
+		var formContainer = document.getElementById('comment-form-container');
+		formContainer.style.display = formContainer.style.display === 'none' || formContainer.style.display === '' ? 'block' : 'none';
+	});
+
+	document.getElementById('toggle-comments').addEventListener('click', function () {
+		var commentsContainer = document.getElementById('comments-container');
+		commentsContainer.style.display = commentsContainer.style.display === 'none' || commentsContainer.style.display === '' ? 'block' : 'none';
+	});
+</script>
+{% endblock %}
+

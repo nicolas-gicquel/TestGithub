@@ -1,0 +1,19 @@
+@import url('https://fonts.cdnfonts.com/css/diphylleia');
+
+
+
+/*centrée le formulaire*/
+.contactee{
+    margin-top: 200px;
+    margin-bottom: 490px;
+}
+
+
+.titreform {
+    font-size: 45px;
+    text-align: center;
+    font-family: 'Diphylleia', sans-serif;
+    font-weight: bold;
+
+}
+

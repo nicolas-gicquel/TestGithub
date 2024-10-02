@@ -1,0 +1,58 @@
+@import url('https://fonts.cdnfonts.com/css/diphylleia');
+
+
+*{
+  margin: 0;
+  padding: 0;
+  }
+
+  .bord {
+    background: linear-gradient(90deg, rgb(182 145 102 / 95%) 17%, rgb(246 244 235 / 95%) 100%);
+}
+
+.hlogo {
+    max-height: 150px; /* Ajuste la hauteur du logo si nécessaire */
+}
+
+.navbar-nav .nav-link {
+    text-decoration: none;
+    color: BLACK;
+    font-weight: bold;
+    font-size: 15px;
+    font-family: 'Diphylleia', sans-serif;
+}
+
+.hlogggin .roundedImage {
+    border-radius: 50%;
+    height: 25px;
+    width: 25px;
+}
+
+.zxfirstname {
+    color: black;
+}
+
+.loggouts {
+    color: black;
+    font-weight: bold;
+}
+
+.loggouts:hover {
+    color: red;
+}
+
+.zxadmin {
+    color: black;
+}
+
+.zxadmin:hover {
+    color: green;
+}
+
+.mylog {
+    color: black;
+}
+
+.mylog:hover {
+    color: green;
+}

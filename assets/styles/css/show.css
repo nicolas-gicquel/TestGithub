@@ -1,0 +1,131 @@
+@import url('https://fonts.cdnfonts.com/css/nevermind-bauhaus');
+@import url('https://fonts.cdnfonts.com/css/randoem-brush');
+
+
+/*Partie en lien avec le main de la page*/
+.wtitle {
+  color: #d13415;
+  font-weight: bold;
+  text-decoration: underline;
+  margin-top: 150px;
+}
+
+.wtexte {
+  font-family: 'NeverMind Bauhaus', sans-serif;
+  font-size: medium;
+}
+.wcreat {
+  font-family: 'NeverMind Bauhaus', sans-serif;
+  font-size: 11px;
+  font-weight: bold;
+  text-align: left;
+}
+
+.wavat {
+  font-size: 11px;
+  font-family: 'NeverMind Bauhaus', sans-serif;
+}
+
+.center-content {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+ 
+}
+
+
+/*Partie bouton */
+  button {
+    text-decoration: none;
+    color: inherit;
+    background: none;
+    border: none;
+    cursor: pointer;
+    outline: none;
+  }
+  
+  .cta {
+    position: relative;
+    margin: auto;
+    padding: 19px 22px;
+    transition: all 0.2s ease;
+    overflow: visible; 
+    display: flex; /* Utilisé pour aligner le texte et la flèche horizontalement */
+    align-items: center; /* Aligne verticalement le texte et la flèche */
+    margin-bottom: 60px;
+  }
+  
+  
+  .cta::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 10px; /* Positionné à gauche, à ajuster selon la taille du rond */
+    transform: translateY(-50%);
+    display: block;
+    border-radius: 28px;
+    background: #0588F0;;
+    width: 50px;
+    height: 50px;
+    transition: all 0.3s ease;
+    
+  }
+  
+  .cta span {
+    position: relative;
+    font-family: 'NeverMind Bauhaus', sans-serif;
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 900;
+    color: black;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    vertical-align: middle;
+    margin-right: 4px; /* Espace entre le texte et la flèche */
+    z-index: 1; /* Assure que le texte est au-dessus du rond */
+   
+  }
+  
+  .cta svg {
+    position: relative;
+    top: 0;
+    margin-left: 10px;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke: black;
+    stroke-width: 2;
+    transform: translateX(-7px);
+    transition: all 0.3s ease;
+    display: block;
+  
+  }
+  
+  .cta:hover::before {
+    width: calc(38% - 2px); /* Expansion contrôlée de la largeur */
+    left: 10px;
+    background: rgba(8, 127, 8, 0.724);
+    
+}
+  
+  .cta:hover svg {
+    transform: translateX(0);
+  }
+  
+  .cta:active {
+    transform: scale(0.96);
+  }
+  
+  .commente{
+    font-size: 18px;    
+  }
+
+  .lien{
+    text-decoration: none;
+    font-weight: bold;
+  }
+  .lien:hover{
+    color: green;
+    font-weight: bold;
+    
+  }

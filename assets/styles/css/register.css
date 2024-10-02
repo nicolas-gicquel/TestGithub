@@ -1,0 +1,92 @@
+@import url('https://fonts.cdnfonts.com/css/diphylleia');
+@import url("https://fonts.cdnfonts.com/css/poppins");
+
+
+.formul{
+  margin-top: 50px;
+  margin-bottom: 345px;
+}
+
+.redirconnexion{
+  font-weight: bold;
+  text-decoration: none;
+}
+.redirconnexion:hover{
+  color: green;
+}
+
+/* Partie bouton de connexion */
+button, a {
+  text-decoration: none;
+  color: inherit;
+  background: none;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.ycta {
+  position: relative;  
+  transition: all 0.2s ease;
+  padding: 16px;
+  overflow: visible;
+  display: flex; /* Aligne le texte et la flèche horizontalement */
+  align-items: center; /* Aligne verticalement le texte et la flèche */
+}
+
+.ycta::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -10px; /* Positionné à gauche */
+  transform: translateY(-50%);
+  display: block;
+  border-radius: 28px;
+  background: #0588F0;
+  width: 42px;
+  height: 42px;
+  transition: all 0.3s ease;
+}
+
+.ycta span {
+  position: relative;
+  font-family: 'Diphylleia', sans-serif;
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 900;
+  color: black;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  vertical-align: middle;
+  margin-right: 8px; /* Espace entre le texte et la flèche */
+  z-index: 1; /* Assure que le texte est au-dessus du rond */
+}
+
+.ycta svg {
+  position: relative;
+  top: 0;
+  margin-left: 10px;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke: black;
+  stroke-width: 2;
+  transform: translateX(-7px);
+  transition: all 0.3s ease;
+  display: block;
+}
+
+.ycta:hover::before {
+  width: 120%; /* Expansion contrôlée de la largeur */
+  left: -10px;
+  background: rgba(8, 127, 8, 0.724);
+}
+
+.ycta:hover svg {
+  transform: translateX(0);
+}
+
+.ycta:active {
+  transform: scale(0.96);
+}
+

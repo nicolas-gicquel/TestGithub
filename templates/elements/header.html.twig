@@ -1,0 +1,67 @@
+<header>
+    <nav class="navbar navbar-expand-lg bord">
+        <div class="container-fluid">
+            <div class="row w-100 align-items-center">
+                <!-- Navbar Links (Rubriques) à gauche -->
+                <div class="col-4">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="{{ path('posts_by_rubrik', {id: 1}) }}">Sacs</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ path('posts_by_rubrik', {id: 2}) }}">Hygiène & Beauté</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ path('posts_by_rubrik', {id: 3}) }}">Enfant</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ path('posts_by_rubrik', {id: 4}) }}">Sublimation</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ path('app_contact') }}">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Logo au centre -->
+                <div class="col-4 text-center">
+                    <a class="navbar-brand" href="{{ path('app_post') }}">
+                        <img class="hlogo" src="{{ asset('divers/images/logo.png') }}" alt="Logo">
+                    </a>
+                </div>
+
+                <!-- User and Social Links à droite -->
+                <div class="col-4 text-end hlogggin">
+                    <div class="header-social-links d-flex justify-content-end align-items-center">
+                        {% if app.user %}
+                            {% if app.user.avatar is empty %}
+                                <i class="fa-solid fa-user-tie"></i>
+                            {% else %}
+                                <img class="roundedImage" src="{{ asset('divers/avatars/' ~ app.user.avatar) }}" alt="User Avatar">&ensp;
+                                <span class="zxfirstname">{{ app.user.pseudo|capitalize }}</span>
+                            {% endif %}
+                            <a class="loggouts ms-3" href="{{ path('app_logout') }}">
+                                <i class="fa-solid fa-power-off"></i>
+                            </a>
+                            {% if app.user.opption == 'yes' %}
+                                <a class="zxadmin ms-3" href="{{ path('admin') }}">
+                                    <i class="fa-solid fa-laptop"></i>
+                                </a>
+                            {% endif %}
+                        {% else %}
+                            <a class="mylog" href="{{ path('app_login') }}">
+                                <i class="fa-solid fa-user login"></i>
+                            </a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+

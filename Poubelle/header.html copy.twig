@@ -1,0 +1,81 @@
+<header>
+    <div class="container-fluid bord">
+        <div class="row d-flex">
+            <!-- Burger Menu Button -->
+            <div class="col-4 d-flex justify-content-start">
+                <button type="button" aria-label="Toggle curtain navigation" class="nav-toggler" style="margin-top: 25px;">
+                    <span class="line l1"></span>
+                    <span class="line l2"></span>
+                    <span class="line l3"></span>
+                </button>
+            </div>
+
+            <!-- Navigation Menu -->
+            <nav class="zindex">
+                <ul>
+                    <li class="nav-item dropdown">
+                        <a class="colorsss" href="{{ path('posts_by_rubrik', {id: 1}) }}" role="button" aria-expanded="false">
+                            Sacs
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="colorsss" href="{{ path('posts_by_rubrik', {id: 2}) }}" role="button" aria-expanded="false">
+                            Hygiène & Beauté
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="colorsss" href="{{ path('posts_by_rubrik', {id: 3}) }}" role="button" aria-expanded="false">
+                            Enfant
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="colorsss" href="{{ path('posts_by_rubrik', {id: 4}) }}" role="button" aria-expanded="false">
+                            Sublimation
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="colorsss" href="{{ path('posts_by_rubrik', {id: 5}) }}" role="button" aria-expanded="false">
+                            Contact
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Logo -->
+            <div class="col-4 text-center">
+                <a class="navbar-brand mr-3" href="{{ path('app_post') }}">
+                    <img class="hlogo" src="{{ asset('divers/images/logo.png') }}" alt="Logo">
+                </a>
+            </div>
+
+            <!-- User and Social Links -->
+            <div class="col-4 text-end hlogggin">
+                <div class="header-social-links d-flex justify-content-end align-items-center zxdroite">
+                    {% if app.user %}
+                        {% if app.user.avatar is empty %}
+                            <i class="fa-solid fa-user-tie"></i>
+                        {% else %}
+                            <img class="roundedImage" src="{{ asset('divers/avatars/' ~ app.user.avatar) }}" style="width:25px; height:25px; border-radius:50%;" alt="User Avatar">&ensp;
+                            <span class="zxfirstname">{{ app.user.pseudo|capitalize }}</span>
+                        {% endif %}
+                        <a class="loggouts ms-3" href="{{ path('app_logout') }}">
+                            <i class="fa-solid fa-power-off"></i>
+                        </a>
+                        {% if app.user.opption == 'yes' %}
+                            <a class="zxadmin ms-3" href="{{ path('admin') }}">
+                                <i class="fa-solid fa-laptop"></i>
+                            </a>
+                        {% endif %}
+                    {% else %}
+                        <a class="mylog" style="margin-top: 10px;" href="{{ path('app_login') }}">
+                            <i class="fa-solid fa-user login"></i>
+                        </a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+  
+        
+    
+</header>

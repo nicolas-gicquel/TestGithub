@@ -10,7 +10,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 #[ORM\Entity(repositoryClass: RubrikRepository::class)]
 class Rubrik
 {
-    //Salut les amis
+    //Hello World
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
